@@ -16,9 +16,10 @@
     <LangVersion>7.3</LangVersion>
     <RazorLangVersion>3.0</RazorLangVersion>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <PackageProjectUrl>https://github.com/Basaingeal/Blazor.Clipboard</PackageProjectUrl>
-    <PackageLicense>https://github.com/Basaingeal/Blazor.Clipboard/blob/master/LICENSE.md</PackageLicense>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseUrl>https://github.com/Basaingeal/Blazor.Clipboard/blob/master/LICENSE.md</PackageLicenseUrl>
 
     <DefaultItemExcludes>${DefaultItemExcludes};node_modules\**</DefaultItemExcludes>
   </PropertyGroup>

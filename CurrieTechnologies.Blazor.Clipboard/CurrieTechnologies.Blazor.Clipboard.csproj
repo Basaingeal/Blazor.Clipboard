@@ -2,6 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Copyright>Michael J. Currie</Copyright>
+    <Description>A Blazor JSInterop library for interacting with the browser clipboard</Description>
+    <PackageTags>Blazor Clipboard</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyName>CurrieTechnologies.Blazor.Clipboard</AssemblyName>
+    <RootNamespace>CurrieTechnologies.Blazor.Clipboard</RootNamespace>
+
+    <DefaultItemExcludes>${DefaultItemExcludes};node_modules\**</DefaultItemExcludes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <!-- .js/.css files will be referenced via <script>/<link> tags; other content files will just be included in the app's 'dist' directory without any tags referencing them -->
+    <EmbeddedResource Include="content\**\*.js" LogicalName="blazor:js:%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.JSInterop" Version="0.7.0" />
+  </ItemGroup>
 
 </Project>

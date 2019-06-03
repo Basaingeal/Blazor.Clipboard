@@ -2,7 +2,7 @@
 This package provides Blazor applications with access to the browser's [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard)
 
 ## Usage
-1) In your Blazor app, add the `CurrieTechnologies.Blazor.Clipboard` NuGet package
+1) In your Blazor app, add the `CurrieTechnologies.Blazor.Clipboard` [NuGet package](https://www.nuget.org/packages/CurrieTechnologies.Blazor.Clipboard/0.1.2)
 
     ```
     Install-Package CurrieTechnologies.Blazor.Clipboard -IncludePrerelease

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrieTechnologies.Blazor.Clipboard", "CurrieTechnologies.Blazor.Clipboard\CurrieTechnologies.Blazor.Clipboard.csproj", "{5725D254-FB1A-49DC-A4F4-D5B31A9E7398}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5725D254-FB1A-49DC-A4F4-D5B31A9E7398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5725D254-FB1A-49DC-A4F4-D5B31A9E7398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5725D254-FB1A-49DC-A4F4-D5B31A9E7398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5725D254-FB1A-49DC-A4F4-D5B31A9E7398}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91775ADB-A5FB-40E7-A4C6-7408BC21F7D0}
+	EndGlobalSection
+EndGlobal

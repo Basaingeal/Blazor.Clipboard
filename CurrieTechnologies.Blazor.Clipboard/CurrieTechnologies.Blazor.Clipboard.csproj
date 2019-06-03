@@ -8,6 +8,14 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyName>CurrieTechnologies.Blazor.Clipboard</AssemblyName>
     <RootNamespace>CurrieTechnologies.Blazor.Clipboard</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <RestoreAdditionalProjectSources>
+      https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json;
+      https://dotnet.myget.org/F/blazor-dev/api/v3/index.json;
+    </RestoreAdditionalProjectSources>
+    <LangVersion>7.3</LangVersion>
+    <RazorLangVersion>3.0</RazorLangVersion>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
 
     <DefaultItemExcludes>${DefaultItemExcludes};node_modules\**</DefaultItemExcludes>
   </PropertyGroup>
@@ -18,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.JSInterop" Version="0.7.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="3.0.0-preview5-19227-01" />
   </ItemGroup>
 
 </Project>

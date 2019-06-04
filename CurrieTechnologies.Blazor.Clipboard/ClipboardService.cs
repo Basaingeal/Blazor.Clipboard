@@ -22,13 +22,18 @@ namespace CurrieTechnologies.Blazor.Clipboard
         /// <summary>
         /// Requests text from the system clipboard.
         /// </summary>
-        /// <returns>A Task that resolves with a DOMString containing the textual contents of the clipboard.</returns>
+        /// <returns>A Task that resolves with a string containing the textual contents of the clipboard. A JSException is thrown if the caller does not have permission to write to the clipboard.</returns>
         public async Task<string> ReadTextAsync()
         {
             var tcs = new TaskCompletionSource<string>();
             var requestId = Guid.NewGuid();
             pendingReadRequests.Add(requestId, tcs);
-            _ = await jSRuntime.InvokeAsync<string>("CurrieTechnologies.Blazor.Clipboard.ReadText", requestId);
+            string invokeResponse = await jSRuntime.InvokeAsync<string>("CurrieTechnologies.Blazor.Clipboard.ReadText", requestId);
+
+            if(invokeResponse.Length > 0)
+            {
+                throw new JSException(invokeResponse);
+            }
 
             return await tcs.Task;
         }
@@ -37,13 +42,18 @@ namespace CurrieTechnologies.Blazor.Clipboard
         /// Writes text to the system clipboard.
         /// </summary>
         /// <param name="newClipText">The string to be written to the clipboard.</param>
-        /// <returns>A Task which is resolved once the text is fully copied into the clipboard.</returns>
+        /// <returns>A Task which is resolved once the text is fully copied into the clipboard. Returns an empty string if the clipboard is empty, does not contain text, or does not include a textual representation among the DataTransfer objects representing the clipboard's contents.</returns>
         public async Task WriteTextAsync(string newClipText)
         {
             var tcs = new TaskCompletionSource<object>();
             var requestId = Guid.NewGuid();
             pendingWriteRequests.Add(requestId, tcs);
-            _ = await jSRuntime.InvokeAsync<object>("CurrieTechnologies.Blazor.Clipboard.WriteText", requestId, newClipText);
+            string invokeResponse = await jSRuntime.InvokeAsync<string>("CurrieTechnologies.Blazor.Clipboard.WriteText", requestId, newClipText);
+
+            if (invokeResponse.Length > 0)
+            {
+                throw new JSException(invokeResponse);
+            }
 
             await tcs.Task;
             return;

@@ -62,14 +62,16 @@ function dispatchWriteResponse(id) {
     });
 }
 window['CurrieTechnologies'] = window['CurrieTechnologies'] || {};
-window['CurrieTechnologies']['Blazor'] = window['CurrieTechnologies']['Blazor'] || {};
-window['CurrieTechnologies']['Blazor']['Clipboard'] = window['CurrieTechnologies']['Blazor']['Clipboard'] || {};
+window['CurrieTechnologies']['Blazor'] =
+    window['CurrieTechnologies']['Blazor'] || {};
+window['CurrieTechnologies']['Blazor']['Clipboard'] =
+    window['CurrieTechnologies']['Blazor']['Clipboard'] || {};
 window['CurrieTechnologies']['Blazor']['Clipboard']['ReadText'] = function (requestId) { return __awaiter(_this, void 0, void 0, function () {
-    var text;
+    var text, e_1, error;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                if (!(window.navigator.clipboard !== undefined)) return [3 /*break*/, 3];
+                _a.trys.push([0, 3, , 4]);
                 return [4 /*yield*/, window.navigator.clipboard.readText()];
             case 1:
                 text = _a.sent();
@@ -77,16 +79,20 @@ window['CurrieTechnologies']['Blazor']['Clipboard']['ReadText'] = function (requ
             case 2:
                 _a.sent();
                 return [3 /*break*/, 4];
-            case 3: return [2 /*return*/, 'No clipboard support'];
+            case 3:
+                e_1 = _a.sent();
+                error = e_1;
+                return [2 /*return*/, error.message];
             case 4: return [2 /*return*/, ''];
         }
     });
 }); };
 window['CurrieTechnologies']['Blazor']['Clipboard']['WriteText'] = function (requestId, textToWrite) { return __awaiter(_this, void 0, void 0, function () {
+    var e_2, error;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                if (!(window.navigator.clipboard !== undefined)) return [3 /*break*/, 3];
+                _a.trys.push([0, 3, , 4]);
                 return [4 /*yield*/, window.navigator.clipboard.writeText(textToWrite)];
             case 1:
                 _a.sent();
@@ -94,7 +100,10 @@ window['CurrieTechnologies']['Blazor']['Clipboard']['WriteText'] = function (req
             case 2:
                 _a.sent();
                 return [3 /*break*/, 4];
-            case 3: return [2 /*return*/, 'No clipboard support'];
+            case 3:
+                e_2 = _a.sent();
+                error = e_2;
+                return [2 /*return*/, error.message];
             case 4: return [2 /*return*/, ''];
         }
     });

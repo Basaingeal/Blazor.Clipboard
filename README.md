@@ -19,7 +19,7 @@ This package provides Blazor applications with access to the browser's [Clipboar
     }
     ```
 
-1) Now you can inject the LocationService into any Blazor page and use it like this:
+1) Now you can inject the ClipboardService into any Blazor page and use it like this:
 
     ```
     @using CurrieTechnologies.Blazor.Clipboard

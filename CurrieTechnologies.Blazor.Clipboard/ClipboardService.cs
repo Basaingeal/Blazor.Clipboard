@@ -22,7 +22,9 @@ namespace CurrieTechnologies.Blazor.Clipboard
         /// <summary>
         /// Requests text from the system clipboard.
         /// </summary>
-        /// <returns>A Task that resolves with a string containing the textual contents of the clipboard. A JSException is thrown if the caller does not have permission to write to the clipboard.</returns>
+        /// <returns>
+        /// A Task that resolves with a string containing the textual contents of the clipboard. A JSException is thrown if the caller does not have permission to write to the clipboard.
+        /// </returns>
         public async Task<string> ReadTextAsync()
         {
             var tcs = new TaskCompletionSource<string>();
@@ -32,6 +34,7 @@ namespace CurrieTechnologies.Blazor.Clipboard
 
             if(invokeResponse.Length > 0)
             {
+                pendingReadRequests.Remove(requestId);
                 throw new JSException(invokeResponse);
             }
 
@@ -42,7 +45,9 @@ namespace CurrieTechnologies.Blazor.Clipboard
         /// Writes text to the system clipboard.
         /// </summary>
         /// <param name="newClipText">The string to be written to the clipboard.</param>
-        /// <returns>A Task which is resolved once the text is fully copied into the clipboard. Returns an empty string if the clipboard is empty, does not contain text, or does not include a textual representation among the DataTransfer objects representing the clipboard's contents.</returns>
+        /// <returns>
+        /// A Task which is resolved once the text is fully copied into the clipboard. Returns an empty string if the clipboard is empty, does not contain text, or does not include a textual representation among the DataTransfer objects representing the clipboard's contents.
+        /// </returns>
         public async Task WriteTextAsync(string newClipText)
         {
             var tcs = new TaskCompletionSource<object>();
@@ -52,6 +57,7 @@ namespace CurrieTechnologies.Blazor.Clipboard
 
             if (invokeResponse.Length > 0)
             {
+                pendingWriteRequests.Remove(requestId);
                 throw new JSException(invokeResponse);
             }
 
@@ -66,6 +72,7 @@ namespace CurrieTechnologies.Blazor.Clipboard
             var idVal = Guid.Parse(id);
             pendingTask = pendingReadRequests.First(x => x.Key == idVal).Value;
             pendingTask.SetResult(text);
+            pendingReadRequests.Remove(idVal);
         }
 
         [JSInvokable]
@@ -75,6 +82,7 @@ namespace CurrieTechnologies.Blazor.Clipboard
             var idVal = Guid.Parse(id);
             pendingTask = pendingWriteRequests.First(x => x.Key == idVal).Value;
             pendingTask.SetResult(null);
+            pendingWriteRequests.Remove(idVal);
         }
     }
 }

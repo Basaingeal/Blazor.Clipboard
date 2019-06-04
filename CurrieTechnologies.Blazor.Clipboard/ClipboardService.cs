@@ -19,6 +19,10 @@ namespace CurrieTechnologies.Blazor.Clipboard
             this.jSRuntime = jSRuntime;
         }
 
+        /// <summary>
+        /// Requests text from the system clipboard.
+        /// </summary>
+        /// <returns>A Task that resolves with a DOMString containing the textual contents of the clipboard.</returns>
         public async Task<string> ReadTextAsync()
         {
             var tcs = new TaskCompletionSource<string>();
@@ -29,12 +33,17 @@ namespace CurrieTechnologies.Blazor.Clipboard
             return await tcs.Task;
         }
 
-        public async Task WriteTextAsync(string textToWrite)
+        /// <summary>
+        /// Writes text to the system clipboard.
+        /// </summary>
+        /// <param name="newClipText">The string to be written to the clipboard.</param>
+        /// <returns>A Task which is resolved once the text is fully copied into the clipboard.</returns>
+        public async Task WriteTextAsync(string newClipText)
         {
             var tcs = new TaskCompletionSource<object>();
             var requestId = Guid.NewGuid();
             pendingWriteRequests.Add(requestId, tcs);
-            _ = await jSRuntime.InvokeAsync<object>("CurrieTechnologies.Blazor.Clipboard.WriteText", requestId, textToWrite);
+            _ = await jSRuntime.InvokeAsync<object>("CurrieTechnologies.Blazor.Clipboard.WriteText", requestId, newClipText);
 
             await tcs.Task;
             return;

@@ -19,7 +19,7 @@
     <Version>0.1.2</Version>
     <PackageProjectUrl>https://github.com/Basaingeal/Blazor.Clipboard</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageLicenseUrl>https://github.com/Basaingeal/Blazor.Clipboard/blob/master/LICENSE.md</PackageLicenseUrl>
+    <!--<PackageLicenseUrl>https://github.com/Basaingeal/Blazor.Clipboard/blob/master/LICENSE.md</PackageLicenseUrl>-->
 
     <DefaultItemExcludes>${DefaultItemExcludes};node_modules\**</DefaultItemExcludes>
   </PropertyGroup>

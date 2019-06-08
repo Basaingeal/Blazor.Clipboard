@@ -8,7 +8,7 @@ namespace CurrieTechnologies.Blazor.Clipboard
 {
     public class ClipboardService
     {
-        static readonly IDictionary<Guid, TaskCompletionSource<string>> pendingReadRequests = 
+        static readonly IDictionary<Guid, TaskCompletionSource<string>> pendingReadRequests =
             new Dictionary<Guid, TaskCompletionSource<string>>();
         static readonly IDictionary<Guid, TaskCompletionSource<object>> pendingWriteRequests =
             new Dictionary<Guid, TaskCompletionSource<object>>();
@@ -32,7 +32,7 @@ namespace CurrieTechnologies.Blazor.Clipboard
             pendingReadRequests.Add(requestId, tcs);
             string invokeResponse = await jSRuntime.InvokeAsync<string>("CurrieTechnologies.Blazor.Clipboard.ReadText", requestId);
 
-            if(invokeResponse.Length > 0)
+            if (invokeResponse.Length > 0)
             {
                 pendingReadRequests.Remove(requestId);
                 throw new JSException(invokeResponse);

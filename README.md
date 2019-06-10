@@ -5,7 +5,7 @@ This package provides Blazor applications with access to the browser's [Clipboar
 1) In your Blazor app, add the `CurrieTechnologies.Blazor.Clipboard` [NuGet package](https://www.nuget.org/packages/CurrieTechnologies.Blazor.Clipboard/)
 
     ```
-    Install-Package CurrieTechnologies.Blazor.Clipboard -IncludePrerelease
+    Install-Package CurrieTechnologies.Blazor.Clipboard
     ```
 
 1) In your Blazor app's `Startup.cs`, register the 'ClipboardService'.

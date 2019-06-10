@@ -1,6 +1,6 @@
 {
   "name": "currietechnologies-blazorclipboard",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Blazor JSInterop library for interacting with the browser clipboard",
   "scripts": {
     "build": "tsc"

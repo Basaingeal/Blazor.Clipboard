@@ -16,12 +16,24 @@
     <LangVersion>7.3</LangVersion>
     <RazorLangVersion>3.0</RazorLangVersion>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <Version>0.2.0</Version>
+    <Version>0.2.1</Version>
     <PackageProjectUrl>https://github.com/Basaingeal/Blazor.Clipboard</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <!--<PackageLicenseUrl>https://github.com/Basaingeal/Blazor.Clipboard/blob/master/LICENSE.md</PackageLicenseUrl>-->
 
     <DefaultItemExcludes>${DefaultItemExcludes};node_modules\**</DefaultItemExcludes>
+
+    <Authors>Michael J. Currie</Authors>
+
+    <Company>Currie Technologies</Company>
+
+    <Product>Blazor.Clipboard</Product>
+
+    <RepositoryUrl>https://github.com/Basaingeal/Blazor.Clipboard</RepositoryUrl>
+
+    <RepositoryType>git</RepositoryType>
+
+    <PackageReleaseNotes>Add DI method to use in startup: services.AddClipboard()</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

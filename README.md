@@ -25,11 +25,11 @@ This package provides Blazor applications with access to the browser's [Clipboar
     @using CurrieTechnologies.Blazor.Clipboard
     @inject ClipboardService clipboard
     
-    <input bind="@textValue" />
-    <button onclick="@(async e => await clipboard.WriteTextAsync(textValue))">Copy To Clipboard</button>
-    <button onclick="@(async e => textValue = await clipboard.ReadTextAsync())">Paste From Clipboard</button>
+    <input @bind="@textValue" />
+    <button @onclick="@(async e => await clipboard.WriteTextAsync(textValue))">Copy To Clipboard</button>
+    <button @onclick="@(async e => textValue = await clipboard.ReadTextAsync())">Paste From Clipboard</button>
 
-    @functions
+    @code
     {
         string textValue = string.Empty;
     }

@@ -3,7 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Copyright>Michael J. Currie</Copyright>
-    <Description>A Blazor JSInterop library for interacting with the browser clipboard</Description>
+    <Description>A Blazor component library for interacting with the browser clipboard.
+Use in Client-side Blazor apps.</Description>
     <PackageTags>Blazor Clipboard</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyName>CurrieTechnologies.Blazor.Clipboard</AssemblyName>
@@ -16,7 +17,7 @@
     <LangVersion>7.3</LangVersion>
     <RazorLangVersion>3.0</RazorLangVersion>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <Version>0.3.0</Version>
+    <Version>0.3.1</Version>
     <PackageProjectUrl>https://github.com/Basaingeal/Blazor.Clipboard</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <!--<PackageLicenseUrl>https://github.com/Basaingeal/Blazor.Clipboard/blob/master/LICENSE.md</PackageLicenseUrl>-->

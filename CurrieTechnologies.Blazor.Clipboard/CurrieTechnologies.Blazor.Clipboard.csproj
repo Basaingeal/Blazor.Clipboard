@@ -34,9 +34,9 @@ Use in Client-side Blazor apps.</Description>
 
     <RepositoryType>git</RepositoryType>
 
-    <PackageReleaseNotes>Update to latest Microsoft.AspNetCore.Components.Browser preview version</PackageReleaseNotes>
+    <PackageReleaseNotes>Update Nuget description</PackageReleaseNotes>
 
-    <PackageIconUrl>https://currietechnologyimages.blob.core.windows.net/logos/transparent_Logo_128.png</PackageIconUrl>
+    <PackageIconUrl>https://currietechnologyimages.blob.core.windows.net/logos/logo_v2_128.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>

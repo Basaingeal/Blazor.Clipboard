@@ -1,7 +1,7 @@
 # CurrieTechnologies.Blazor.Clipboard
 This package provides Blazor applications with access to the browser's [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard)
 
-## This package is for Client-side Blazor only. For Server-side Blazor use [CurrieTechnologies.Razor.Clipboard](https://github.com/Basaingeal/Razor.Clipboard)
+## This package is depracted. Use [CurrieTechnologies.Razor.Clipboard](https://github.com/Basaingeal/Razor.Clipboard)
 
 ## Usage
 1) In your Blazor app, add the `CurrieTechnologies.Blazor.Clipboard` [NuGet package](https://www.nuget.org/packages/CurrieTechnologies.Blazor.Clipboard/)
@@ -10,7 +10,7 @@ This package provides Blazor applications with access to the browser's [Clipboar
     Install-Package CurrieTechnologies.Blazor.Clipboard
     ```
 
-1) In your Blazor app's `Startup.cs`, register the 'ClipboardService'.
+2) In your Blazor app's `Startup.cs`, register the 'ClipboardService'.
 
     ```
     public void ConfigureServices(IServiceCollection services)
@@ -21,7 +21,7 @@ This package provides Blazor applications with access to the browser's [Clipboar
     }
     ```
 
-1) Now you can inject the ClipboardService into any Blazor page and use it like this:
+3) Now you can inject the ClipboardService into any Blazor page and use it like this:
 
     ```
     @using CurrieTechnologies.Blazor.Clipboard

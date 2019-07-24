@@ -1,7 +1,7 @@
 {
   "name": "currietechnologies-blazorclipboard",
-  "version": "0.3.1",
-  "description": "A Blazor component library for interacting with the browser clipboard.",
+  "version": "0.4.0",
+  "description": "Deprecated. Use CurrieTechnologies.Razor.Clipboard",
   "scripts": {
     "build": "tsc"
   },
